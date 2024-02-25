@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { v4 as uuidv4 } from 'uuid';
 import { ToDoList, ToDo } from '../models/ToDo';
 
 const toDolist = new ToDoList();
@@ -20,7 +19,7 @@ export const createToDo = (req: Request, res: Response) => {
     return res.json({ message: 'Write a task' });
   }
 
-  const newToDo = new ToDo(uuidv4(), title, isCompleted);
+  const newToDo = new ToDo(title, isCompleted);
   toDolist.addToDo(newToDo);
 
   return res.json(newToDo);

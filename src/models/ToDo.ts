@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 export interface IToDo {
   id: string;
   title: string;
@@ -5,18 +6,18 @@ export interface IToDo {
 }
 
 export class ToDo implements IToDo {
-  constructor(
-    readonly id: string,
-    public title: string,
-    public isCompleted?: boolean
-  ) {}
+  readonly id: string;
+  constructor(public title: string, public isCompleted?: boolean) {
+    this.id = uuidv4();
+  }
 }
 
 export class ToDoList {
   private toDoList: ToDo[] = [];
 
-  addToDo(newToDo: ToDo): void {
+  addToDo(newToDo: ToDo): ToDo {
     this.toDoList.push(newToDo);
+    return newToDo;
   }
 
   getToDos(): IToDo[] {
@@ -24,7 +25,7 @@ export class ToDoList {
   }
 
   updateToDo(id: string, title: string): void {
-    this.toDoList.map((toDo): void => {
+    this.toDoList.forEach((toDo): void => {
       if (toDo.id === id) {
         toDo.title = title;
       }
@@ -32,7 +33,7 @@ export class ToDoList {
   }
 
   changeToDoState(id: string): void {
-    this.toDoList.map((toDo) => {
+    this.toDoList.forEach((toDo) => {
       if (toDo.id === id) {
         toDo.isCompleted = !toDo.isCompleted;
       }

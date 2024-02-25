@@ -8,50 +8,51 @@ describe('todolist', () => {
     toDoList.removeAllToDos();
   });
 
-  it('should create new todo', () => {
-    const newToDo = new ToDo('1', 'To learn Node.Js', false);
-
-    expect(newToDo.id).toBe('1');
-    expect(newToDo.title).toBe('To learn Node.Js');
-    expect(newToDo.isCompleted).toBe(false);
-  });
-
   it('should add new todo in todo list', () => {
-    const newToDo = new ToDo('1', 'To learn TDD', false);
-    toDoList.addToDo(newToDo);
+    const newToDo = new ToDo('To learn TDD', false);
+
+    const actualToDo = toDoList.addToDo(newToDo);
 
     expect(toDoList).toBeInstanceOf(ToDoList);
-    expect(toDoList.getToDos()).toContain(newToDo);
+    expect(actualToDo).toEqual(
+      expect.objectContaining({
+        title: 'To learn TDD',
+        isCompleted: false,
+      })
+    );
   });
 
   it('should update todo title', () => {
-    const newToDo = new ToDo('1', 'To learn SOLID', false);
-    toDoList.addToDo(newToDo);
-    toDoList.updateToDo('1', 'To learn clean architecture');
+    const newToDo = toDoList.addToDo(new ToDo('To learn SOLID', false));
+    toDoList.updateToDo(newToDo.id, 'To learn clean architecture');
 
-    const updatedToDo = toDoList.getToDos().find((todo) => todo.id === '1');
+    const updatedToDo = toDoList
+      .getToDos()
+      .find((todo) => todo.id === newToDo.id);
 
     expect(updatedToDo?.title).toBe('To learn clean architecture');
   });
 
-  it('should change todo state', () => {
-    const newToDo1 = new ToDo('1', 'To learn Jest', false);
-    const newToDo2 = new ToDo('2', 'To do own pet project', true);
-    toDoList.addToDo(newToDo1);
-    toDoList.addToDo(newToDo2);
-    toDoList.changeToDoState('1');
-    toDoList.changeToDoState('2');
+  it.each([
+    ['To learn Jest', false, true],
+    ['To do own pet project', true, false],
+  ])('should change todo state', (title, isCompleted, expected) => {
+    const newToDo = new ToDo(title, isCompleted);
+    toDoList.addToDo(newToDo);
 
-    expect(newToDo1.isCompleted).toBe(true);
-    expect(newToDo2.isCompleted).toBe(false);
+    toDoList.changeToDoState(newToDo.id);
+
+    expect(newToDo.isCompleted).toBe(expected);
   });
 
   it('should remove a todo', () => {
-    const newToDo1 = new ToDo('1', 'To finish this project', false);
-    const newToDo2 = new ToDo('2', 'To learn TypeScript', false);
+    const newToDo1 = new ToDo('To finish this project', false);
+    const newToDo2 = new ToDo('To learn TypeScript', false);
     toDoList.addToDo(newToDo1);
     toDoList.addToDo(newToDo2);
-    toDoList.removeToDo('2');
+
+    toDoList.removeToDo(newToDo2.id);
+
     const toDolistLength = toDoList.getToDos();
 
     expect(toDoList.getToDos()).toContain(newToDo1);
@@ -60,10 +61,11 @@ describe('todolist', () => {
   });
 
   it('should remove all todos', () => {
-    const newToDo1 = new ToDo('2', 'To do frontend part', false);
-    const newToDo2 = new ToDo('3', 'To aprove all tests', false);
+    const newToDo1 = new ToDo('To do frontend part', false);
+    const newToDo2 = new ToDo('To aprove all tests', false);
     toDoList.addToDo(newToDo1);
     toDoList.addToDo(newToDo2);
+
     toDoList.removeAllToDos();
 
     expect(toDoList.getToDos().length).toBe(0);
