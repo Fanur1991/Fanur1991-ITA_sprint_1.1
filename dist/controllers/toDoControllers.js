@@ -1,4 +1,4 @@
-import { ToDoList, ToDo } from '../models/ToDo';
+import { ToDoList, ToDo } from '../models/ToDo.js';
 const toDolist = new ToDoList();
 const isCompleted = false;
 // get todo controller

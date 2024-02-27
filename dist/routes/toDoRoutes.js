@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getToDosList, createToDo, removeToDo, removeToDos, updateToDo, updateToDoState, } from '../controllers/toDoControllers';
+import { getToDosList, createToDo, removeToDo, removeToDos, updateToDo, updateToDoState, } from '../controllers/toDoControllers.js';
 const router = Router();
 router.get('/todos', getToDosList);
 router.post('/todo', createToDo);

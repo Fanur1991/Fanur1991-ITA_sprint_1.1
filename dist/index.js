@@ -1,6 +1,6 @@
 import express from 'express'; // ESmodule
 // const express = require('express') -> commonJS
-import toDoRoutes from './routes/toDoRoutes';
+import toDoRoutes from './routes/toDoRoutes.js';
 const app = express();
 app.use(express.json());
 const PORT = 3000;
