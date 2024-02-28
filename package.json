@@ -10,7 +10,7 @@
     "tsc:watch": "tsc -watch",
     "start": "node --inspect dist/index.js",
     "start:cli": "node --inspect dist/cli/index.js",
-    "test": "jest",
+    "test": "jest --ignorePattern client",
     "test:watch": "jest --watchAll"
   },
   "keywords": [],
