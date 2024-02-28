@@ -16,10 +16,12 @@ Este es un proyecto de lista de tareas, construido con TypeScript y siguiendo lo
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Jest](https://img.shields.io/badge/-Jest-C21325?style=flat-square&logo=jest&logoColor=white)
 ![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white)
 
 ## Scripts Disponibles
 
 En este proyecto, puedes ejecutar los siguientes scripts:
+
 
 ### `npm run tsc`
 Compila los archivos TypeScript a JavaScript.
