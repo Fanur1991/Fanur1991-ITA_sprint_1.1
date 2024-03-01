@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "node --loader ts-node/esm src/index.ts",
     "tsc": "tsc",
     "tsc:watch": "tsc -watch",
     "start:server": "node --inspect dist/index.js",
@@ -27,8 +27,6 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
-    "@babel/preset-env": "^7.23.9",
     "@types/colors": "^1.2.1",
     "@types/express": "^4.17.21",
     "@types/inquirer": "^9.0.7",
@@ -37,7 +35,7 @@
     "babel-jest": "^29.7.0",
     "concurrently": "^8.2.2",
     "jest": "^29.7.0",
-    "nodemon": "^3.0.3",
+    "nodemon": "^3.1.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
