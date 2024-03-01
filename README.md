@@ -22,12 +22,17 @@ Este es un proyecto de lista de tareas, construido con TypeScript y siguiendo lo
 
 En este proyecto, puedes ejecutar los siguientes scripts:
 
+### `npm run dev`
+Ejecuta el script de desarrollo con TypeScript y ESM.
 
 ### `npm run tsc`
 Compila los archivos TypeScript a JavaScript.
 
+### `npm run tsc:watch`
+Inicia el compilador TypeScript en modo de observación.
+
 ### `npm start`
-Ejecuta la versión compilada del proyecto.
+Ejecuta simultáneamente el servidor y el cliente del proyecto.
 
 ### `npm run start:cli`
 Ejecuta una interfaz de línea de comandos para interactuar con la aplicación.
