@@ -1,6 +1,6 @@
 # Lista de Tareas
 
-Este es un proyecto de lista de tareas, construido con TypeScript y siguiendo los principios de Desarrollo Guiado por Pruebas (TDD). 
+Este es un proyecto de lista de tareas, construido con TypeScript y siguiendo los principios de Desarrollo Guiado por Pruebas (TDD). Incluye interfaz CLI, testing y frontend básico en React + TypeScript. 
 
 ## Características
 
