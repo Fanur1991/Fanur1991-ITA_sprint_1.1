@@ -1,48 +1,57 @@
-import { ToDoList, ToDo } from '../models/ToDo.js';
-const toDolist = new ToDoList();
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.removeToDos = exports.removeToDo = exports.updateToDoState = exports.updateToDo = exports.createToDo = exports.getToDosList = void 0;
+const ToDo_1 = require("../models/ToDo");
+const toDolist = new ToDo_1.ToDoList();
 const isCompleted = false;
 // get todo controller
-export const getToDosList = (_req, res) => {
-  const toDos = toDolist.getToDos();
-  return res.json(toDos);
+const getToDosList = (_req, res) => {
+    const toDos = toDolist.getToDos();
+    return res.json(toDos);
 };
+exports.getToDosList = getToDosList;
 // create new todo controller
-export const createToDo = (req, res) => {
-  const { title } = req.body;
-  if (title === '') {
-    return res.json({ message: 'Write a task' });
-  }
-  const newToDo = new ToDo(title, isCompleted);
-  toDolist.addToDo(newToDo);
-  return res.json(newToDo);
+const createToDo = (req, res) => {
+    const { title } = req.body;
+    if (title === '') {
+        return res.json({ message: 'Write a task' });
+    }
+    const newToDo = new ToDo_1.ToDo(title, isCompleted);
+    toDolist.addToDo(newToDo);
+    return res.json(newToDo);
 };
+exports.createToDo = createToDo;
 // update todo title controller
-export const updateToDo = (req, res) => {
-  const { id } = req.params;
-  const { title } = req.body;
-  toDolist.updateToDo(id, title);
-  const toDos = toDolist.getToDos();
-  return res.json(toDos);
+const updateToDo = (req, res) => {
+    const { id } = req.params;
+    const { title } = req.body;
+    toDolist.updateToDo(id, title);
+    const toDos = toDolist.getToDos();
+    return res.json(toDos);
 };
+exports.updateToDo = updateToDo;
 // update todo state controller
-export const updateToDoState = (req, res) => {
-  const { id } = req.params;
-  toDolist.changeToDoState(id);
-  const toDos = toDolist.getToDos();
-  return res.json(toDos);
+const updateToDoState = (req, res) => {
+    const { id } = req.params;
+    toDolist.changeToDoState(id);
+    const toDos = toDolist.getToDos();
+    return res.json(toDos);
 };
+exports.updateToDoState = updateToDoState;
 // remove a todo controller
-export const removeToDo = (req, res) => {
-  const { id } = req.params;
-  if (!id) {
-    return res.json({ message: 'That todo does not exist' });
-  }
-  toDolist.removeToDo(id);
-  return res.json({ message: 'Todo had been removed' });
+const removeToDo = (req, res) => {
+    const { id } = req.params;
+    if (!id) {
+        return res.json({ message: 'That todo does not exist' });
+    }
+    toDolist.removeToDo(id);
+    return res.json({ message: 'Todo had been removed' });
 };
+exports.removeToDo = removeToDo;
 // remove all todos controller
-export const removeToDos = (_req, res) => {
-  toDolist.removeAllToDos();
-  return res.json({ message: 'All todos had been removed' });
+const removeToDos = (_req, res) => {
+    toDolist.removeAllToDos();
+    return res.json({ message: 'All todos had been removed' });
 };
+exports.removeToDos = removeToDos;
 //# sourceMappingURL=toDoControllers.js.map

@@ -1,12 +1,16 @@
-import { v4 as uuidv4 } from 'uuid';
-export class ToDo {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ToDoList = exports.ToDo = void 0;
+const uuid_1 = require("uuid");
+class ToDo {
     constructor(title, isCompleted) {
         this.title = title;
         this.isCompleted = isCompleted;
-        this.id = uuidv4();
+        this.id = (0, uuid_1.v4)();
     }
 }
-export class ToDoList {
+exports.ToDo = ToDo;
+class ToDoList {
     constructor() {
         this.toDoList = [];
     }
@@ -38,4 +42,5 @@ export class ToDoList {
         this.toDoList = [];
     }
 }
+exports.ToDoList = ToDoList;
 //# sourceMappingURL=ToDo.js.map
