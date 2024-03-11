@@ -45,7 +45,7 @@ Ejecuta los tests en modo de observación, para re-ejecutarlos automáticamente 
 
 ## Licencia
 
-Este proyecto está bajo la licencia ISC. Consulta el archivo `LICENSE` para más detalles.
+Este proyecto se distribuye bajo la licencia Apache. Consulta el archivo `LICENSE` para más detalles.
 
 ---
 
