@@ -1,16 +1,16 @@
-# Lista de Tareas
+# Task List
 
-Este es un proyecto de lista de tareas, construido con TypeScript y siguiendo los principios de Desarrollo Guiado por Pruebas (TDD). Incluye interfaz CLI, testing y frontend básico en React + TypeScript. 
+This is a task list project, built with TypeScript and following Test-Driven Development (TDD) principles. It includes a CLI interface, testing, and a basic frontend in React + TypeScript.
 
-## Características
+## Features
 
-- **Agregar Tareas**: Añade nuevas tareas a tu lista.
-- **Modificar Titulo de Tareas**: Modifica titulo de tareas.
-- **Marcar Tareas como Completadas**: Marca tus tareas realizadas.
-- **Eliminar una Tarea o todas Tareas**: Elimina las tareas.
-- **Ver Lista de Tareas**: Muestra todas tus tareas en una lista.
+- **Add Tasks**: Add new tasks to your list.
+- **Modify Task Titles**: Modify task titles.
+- **Mark Tasks as Completed**: Mark your tasks as done.
+- **Delete a Task or All Tasks**: Delete tasks.
+- **View Task List**: Display all your tasks in a list.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
@@ -18,35 +18,35 @@ Este es un proyecto de lista de tareas, construido con TypeScript y siguiendo lo
 ![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white)
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white)
 
-## Scripts Disponibles
+## Available Scripts
 
-En este proyecto, puedes ejecutar los siguientes scripts:
+In this project, you can run the following scripts:
 
 ### `npm run dev`
-Ejecuta el script de desarrollo con TypeScript y ESM.
+Run the development script with TypeScript and ESM.
 
 ### `npm run tsc`
-Compila los archivos TypeScript a JavaScript.
+Compile TypeScript files to JavaScript.
 
 ### `npm run tsc:watch`
-Inicia el compilador TypeScript en modo de observación.
+Start the TypeScript compiler in watch mode.
 
 ### `npm start`
-Ejecuta simultáneamente el servidor y el cliente del proyecto.
+Simultaneously run the server and client of the project.
 
 ### `npm run start:cli`
-Ejecuta una interfaz de línea de comandos para interactuar con la aplicación.
+Run a command-line interface to interact with the application.
 
 ### `npm test`
-Ejecuta los tests definidos con Jest para asegurar que todo funcione correctamente.
+Run tests defined with Jest to ensure everything works correctly.
 
 ### `npm run test:watch`
-Ejecuta los tests en modo de observación, para re-ejecutarlos automáticamente al modificar los archivos.
+Run tests in watch mode, to automatically re-run them when files are modified.
 
-## Licencia
+## License
 
-Este proyecto se distribuye bajo la licencia Apache. Consulta el archivo `LICENSE` para más detalles.
+This project is distributed under the Apache 2.0 license. See the `LICENSE` file for more details.
 
 ---
 
-Desarrollado por [Fanur Khusainov](https://github.com/Fanur1991) con ❤️ y ☕.
+Developed by [Fanur Khusainov](https://www.linkedin.com/in/fanur-khusainov-ab86b2102/) with ❤️ and ☕.
