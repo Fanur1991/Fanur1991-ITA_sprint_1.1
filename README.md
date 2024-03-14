@@ -45,7 +45,7 @@ Run tests in watch mode, to automatically re-run them when files are modified.
 
 ## License
 
-This project is distributed under the Apache 2.0 license. See the `LICENSE` file for more details.
+This project is distributed under the Apache 2.0 license.
 
 ---
 
